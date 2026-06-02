@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>España · 21–30 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#FBF1DD;
+    --sand-2:#F4E6C9;
+    --ink:#221A12;
+    --terra:#D14B22;
+    --terra-deep:#A8350F;
+    --gold:#E0922B;
+    --night:#161B36;
+    --night-2:#222a52;
+    --sea:#0E6E6B;
+    --red:#B8362A;
+    --line:rgba(34,26,18,.14);
+    --paper-shadow:0 1px 0 rgba(255,255,255,.6),0 18px 40px -20px rgba(60,30,10,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 12% 8%,rgba(224,146,43,.18),transparent 38%),radial-gradient(circle at 90% 22%,rgba(209,75,34,.13),transparent 40%);
+    overflow-x:hidden;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px 80px}
+
+  /* HERO */
+  header.hero{
+    padding:56px 18px 40px;max-width:680px;margin:0 auto;position:relative;
+  }
+  .kicker{
+    font-family:'DM Sans';font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    font-size:11px;color:var(--terra);margin-bottom:14px;
+  }
+  h1{
+    font-family:'Fraunces';font-weight:900;font-size:clamp(56px,19vw,108px);line-height:.86;
+    letter-spacing:-.02em;color:var(--ink);
+  }
+  h1 .em{font-style:italic;font-weight:500;color:var(--terra)}
+  .hero-meta{
+    margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;
+    font-size:14px;font-weight:500;
+  }
+  .hero-meta b{font-weight:700}
+  .hero-sub{margin-top:18px;font-size:15px;max-width:46ch;color:#5c4d3c}
+  .route{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:6px;font-family:'Fraunces';font-weight:600;font-size:15px;
+  }
+  .route span{display:inline-flex;align-items:center;gap:6px}
+  .route .arr{color:var(--terra);font-family:'DM Sans'}
+
+  /* legend */
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .pill{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 11px;border-radius:100px;border:1px solid var(--line)}
+  .p-must{background:var(--terra);color:#fff;border-color:var(--terra)}
+  .p-night{background:var(--night);color:#fff;border-color:var(--night)}
+  .p-move{background:transparent;color:var(--sea);border-color:var(--sea)}
+
+  /* DAY CARD */
+  .day{
+    background:#fffaf0;border:1px solid var(--line);border-radius:20px;margin-top:22px;
+    box-shadow:var(--paper-shadow);overflow:hidden;
+  }
+  .day-head{
+    display:flex;align-items:flex-start;gap:14px;padding:20px 20px 16px;
+    border-bottom:1px dashed var(--line);position:relative;
+  }
+  .daynum{
+    font-family:'Fraunces';font-weight:900;font-size:40px;line-height:.8;color:var(--terra);
+    min-width:54px;
+  }
+  .day-head .dh-r{flex:1}
+  .day-date{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a7559}
+  .day-city{font-family:'Fraunces';font-size:25px;font-weight:600;line-height:1.05;margin-top:2px}
+  .day-tag{font-size:13px;color:#5c4d3c;margin-top:4px;font-weight:500}
+
+  /* color skins per city */
+  .c-mad .daynum{color:var(--terra)}
+  .c-val .daynum{color:var(--gold)}
+  .c-ibz .daynum{color:var(--night-2)}
+  .c-bcn .daynum{color:var(--red)}
+
+  .blocks{padding:6px 20px 20px}
+  .block{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(34,26,18,.07)}
+  .block:last-child{border-bottom:none}
+  .time{
+    font-family:'Fraunces';font-weight:600;font-size:13px;min-width:62px;color:var(--terra-deep);
+    padding-top:2px;font-variant-numeric:tabular-nums;
+  }
+  .c-ibz .time{color:var(--night-2)}
+  .c-bcn .time{color:var(--red)}
+  .c-val .time{color:#b06d12}
+  .bd{flex:1}
+  .bd h4{font-size:15.5px;font-weight:700;margin-bottom:3px}
+  .bd p{font-size:14px;color:#5b4c3b;line-height:1.46}
+  .bd .note{font-size:12.5px;color:#917a5e;margin-top:5px;font-style:italic}
+  .star{color:var(--terra);font-weight:700}
+
+  .chip{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:3px 8px;border-radius:6px;margin:0 0 6px 0;vertical-align:middle}
+  .ch-must{background:rgba(209,75,34,.13);color:var(--terra-deep)}
+  .ch-night{background:var(--night);color:#fff}
+  .ch-move{background:rgba(14,110,107,.12);color:var(--sea)}
+  .ch-eat{background:rgba(224,146,43,.18);color:#8a5b10}
+
+  /* nightlife band inside card */
+  .nightband{
+    background:var(--night);color:#efe9ff;margin:0;padding:18px 20px;
+    background-image:radial-gradient(circle at 80% 10%,rgba(123,97,255,.4),transparent 50%),radial-gradient(circle at 10% 90%,rgba(209,75,34,.35),transparent 55%);
+  }
+  .nightband .nb-k{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#c9b9ff;margin-bottom:7px}
+  .nightband h4{font-family:'Fraunces';font-weight:600;font-size:18px;margin-bottom:6px;color:#fff}
+  .nightband p{font-size:13.5px;color:#d8d2ef;line-height:1.5}
+  .nightband b{color:#fff;font-weight:700}
+
+  /* section divider */
+  .seg-label{
+    font-family:'Fraunces';font-style:italic;font-weight:500;font-size:18px;color:var(--terra);
+    margin:36px 4px 2px;display:flex;align-items:center;gap:12px;
+  }
+  .seg-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* checklist */
+  .checklist{background:var(--ink);color:var(--sand);border-radius:20px;margin-top:34px;padding:26px 22px;
+    background-image:radial-gradient(circle at 90% 0%,rgba(209,75,34,.3),transparent 45%);}
+  .checklist h3{font-family:'Fraunces';font-weight:600;font-size:24px;margin-bottom:4px;color:#fff}
+  .checklist .cl-sub{font-size:13px;color:#cbb9a3;margin-bottom:18px}
+  .cl-item{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px}
+  .cl-item:last-child{border-bottom:none}
+  .cl-box{width:18px;height:18px;border:1.5px solid var(--gold);border-radius:5px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1}
+  .cl-item.done .cl-box{background:var(--gold);border-color:var(--gold);color:var(--ink);font-weight:700}
+  .cl-item.done .cl-box::after{content:"✓"}
+  .cl-item.done b{text-decoration:line-through;text-decoration-color:rgba(255,255,255,.4)}
+  .cl-item.done b,.cl-item.done span{color:#9d8a73}
+  .cl-item b{color:#fff}
+  .cl-item span{color:#d8c9b5}
+
+  /* tips */
+  .tips{margin-top:26px;display:grid;gap:12px}
+  .tip{background:#fffaf0;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;font-size:13.5px;color:#5b4c3b}
+  .tip b{color:var(--ink)}
+
+  footer{text-align:center;margin-top:46px;font-size:12px;color:#a8957d;font-style:italic;font-family:'Fraunces'}
+  a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Bombay → España · Summer Tour</div>
+  <h1>Nine days,<br><span class="em">four cities,</span><br>one summer.</h1>
+  <div class="hero-meta">
+    <span><b>21 – 30 June 2026</b></span>
+    <span>Land Madrid · 21 Jun AM</span>
+    <span>Fly home BCN · 30 Jun 22:30</span>
+  </div>
+  <p class="hero-sub">Football, a beach-bonfire festival, island clubs, a jump out of a plane, and a Saturday in Barcelona. Touristy where it counts, party where it matters.</p>
+  <div class="route">
+    <span>Madrid</span><span class="arr">→</span>
+    <span>València</span><span class="arr">→</span>
+    <span>Ibiza</span><span class="arr">→</span>
+    <span>Barcelona</span>
+  </div>
+  <div class="legend">
+    <span class="pill p-must">★ Must-do</span>
+    <span class="pill p-night">Nightlife</span>
+    <span class="pill p-move">Travel day</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== MADRID ===== -->
+  <div class="seg-label">Madrid · the football leg</div>
+
+  <!-- DAY 1 -->
+  <div class="day c-mad">
+    <div class="day-head">
+      <div class="daynum">21</div>
+      <div class="dh-r">
+        <div class="day-date">Sunday · Arrival</div>
+        <div class="day-city">Land in Madrid</div>
+        <div class="day-tag">Spain plays at 6 PM — the whole day builds to it.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">AM</div>
+        <div class="bd">
+          <h4>Land, drop bags, breathe</h4>
+          <p>Get to base: <b>TOC Hostel</b>, Plaza de Celenque — right between Puerta del Sol and Gran Vía, dead center and a 10-min walk to the Malasaña/Chueca bars. Freshen up, don't over-plan; you're off an overnight flight (Spain is 3.5h behind Bombay, so jet lag is mild).</p>
+          <p class="note">From TOC: fan zone at Plaza de Colón ≈ 20-min walk · Bernabéu ≈ 25 min by metro · Atocha (València train) ≈ one Cercanías stop / 10 min.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">1 PM</div>
+        <div class="bd">
+          <span class="chip ch-eat">Easy first meal</span>
+          <h4>Tapas + a slow wander</h4>
+          <p>Lunch at <b>Mercado de San Miguel</b>, then a loop through Puerta del Sol, Plaza Mayor and the Royal Palace exterior. Keep it light — save the legs.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">4:30 PM</div>
+        <div class="bd">
+          <span class="chip ch-must">★ Match day</span>
+          <h4>Spain vs Saudi Arabia — fan zone</h4>
+          <p>Kickoff is <b>6 PM Madrid time</b>. Head to the official giant screen at <b>Plaza de Colón</b> — free, enormous crowd, full La Roja chaos. Get there ~90 min early to claim space.</p>
+          <p class="note">Group backup if the square's a crush: any sports bar in Malasaña will have it on — easier to keep 8+ people together.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">After the final whistle ◗ ~8 PM</div>
+      <h4>First night out</h4>
+      <p>Ride the win (hopefully) into a tapas-crawl dinner, then ease in: <b>rooftop drinks at Círculo de Bellas Artes</b> → bars in <b>Malasaña</b>. If anyone's still standing, <b>Teatro Kapital</b> (7 floors, Madrid institution) is the move. Don't burn out on night one.</p>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day c-mad">
+    <div class="day-head">
+      <div class="daynum">22</div>
+      <div class="dh-r">
+        <div class="day-date">Monday · Madrid</div>
+        <div class="day-city">Bernabéu + the city</div>
+        <div class="day-tag">Your one full Madrid day. Make it count.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">10 AM</div>
+        <div class="bd">
+          <span class="chip ch-must">★ Must-do</span>
+          <h4>Santiago Bernabéu tour</h4>
+          <p>The newly renovated stadium — museum, pitch-side, panoramic views. Open Mon–Sat 9–19, self-guided. <b>Book your slot online in advance</b> so you're not stuck in the queue.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">2 PM</div>
+        <div class="bd">
+          <h4>Retiro + Gran Vía</h4>
+          <p>Row a boat in <b>El Retiro</b>, then walk <b>Gran Vía</b> for the big-city buzz and shopping. Pick one museum if you're into it (Prado / Reina Sofía) — optional.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">9 PM</div>
+        <div class="bd">
+          <span class="chip ch-eat">Dinner</span>
+          <h4>Late Spanish dinner</h4>
+          <p>Eat properly — Spaniards dine at 9–10. Then the night's just starting.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">Big Madrid night ◗ this is the one</div>
+      <h4>Go all in</h4>
+      <p>Pre-game in <b>Malasaña / Chueca</b> bars, then a proper club: <b>Teatro Kapital</b> or <b>Teatro Barceló</b>. Spanish clubs don't fill till ~1–2 AM and run till dawn — pace accordingly, you've got a train tomorrow.</p>
+    </div>
+  </div>
+
+  <!-- ===== VALENCIA ===== -->
+  <div class="seg-label">València · fire on the beach</div>
+
+  <!-- DAY 3 -->
+  <div class="day c-val">
+    <div class="day-head">
+      <div class="daynum">23</div>
+      <div class="dh-r">
+        <div class="day-date">Tuesday · Madrid → València</div>
+        <div class="day-city">Train south + Noche de San Juan</div>
+        <div class="day-tag">The festival you came for happens tonight.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">~11 AM</div>
+        <div class="bd">
+          <span class="chip ch-move">Travel</span>
+          <h4>High-speed train, Atocha → València</h4>
+          <p>1h40–1h55, ~20+ departures a day. Take a <b>late-morning / early-afternoon train</b> so you're settled before the beach roads close (~4–5 PM tonight). <b>Book ahead</b> on Renfe / iryo / Ouigo — fares drop to €9–10 early.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">2 PM</div>
+        <div class="bd">
+          <h4>Check in near the beach</h4>
+          <p>Base yourself near <b>Malvarrosa / Patacona</b> (or El Carmen old town with easy tram to the sand). Stock up on food + drinks for tonight — it's BYO on the beach.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">★ Noche de San Juan ◗ evening → ~4 AM</div>
+      <h4>Bonfires on Malvarrosa</h4>
+      <p>All of València pours onto the beach: <b>bonfires, music, food, midnight jump into the sea</b> to "welcome summer." Head down early evening to grab a spot. The party runs till around 4 AM — this is the heart of your València stop.</p>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day c-val">
+    <div class="day-head">
+      <div class="daynum">24</div>
+      <div class="dh-r">
+        <div class="day-date">Wednesday · València</div>
+        <div class="day-city">Recover + the futuristic city</div>
+        <div class="day-tag">Slow start earned. Then the good stuff.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">Noon</div>
+        <div class="bd">
+          <span class="chip ch-eat">★ Eat where it was invented</span>
+          <h4>Real paella lunch</h4>
+          <p>València is the birthplace of paella — have the authentic thing (try near the beach or El Palmar). Lazy, long, deserved.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">4 PM</div>
+        <div class="bd">
+          <span class="chip ch-must">★ Photo gold</span>
+          <h4>City of Arts &amp; Sciences</h4>
+          <p>Spaceship-like white architecture, reflecting pools — the most photogenic spot in town. Bike the <b>Turia Gardens</b> (a riverbed-turned-park) to get there, then wander the <b>old town</b>: Cathedral, Mercado Central.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">Lighter night ◗ recharge</div>
+      <h4>Bars in El Carmen</h4>
+      <p>Easy night out in the <b>Barrio del Carmen</b> — buzzy, young, low-key. You've got an island and three more nights ahead; bank some energy.</p>
+    </div>
+  </div>
+
+  <!-- ===== IBIZA ===== -->
+  <div class="seg-label">Ibiza · the island</div>
+
+  <!-- DAY 5 -->
+  <div class="day c-ibz">
+    <div class="day-head">
+      <div class="daynum">25</div>
+      <div class="dh-r">
+        <div class="day-date">Thursday · València → Ibiza</div>
+        <div class="day-city">Fly to the island</div>
+        <div class="day-tag">Sunsets and superclubs from here on.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">AM</div>
+        <div class="bd">
+          <span class="chip ch-move">Travel</span>
+          <h4>València → Ibiza</h4>
+          <p>Quickest is a <b>direct flight (~45 min)</b> on Vueling/Iberia; a <b>fast ferry</b> (Baleària, ~2–3h) is the scenic alt. Book early — summer island seats vanish.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">PM</div>
+        <div class="bd">
+          <h4>Check in: Playa d'en Bossa or San Antonio</h4>
+          <p><b>Playa d'en Bossa</b> = next to Ushuaïa &amp; Hï (clubs at your doorstep). <b>San Antonio</b> = the legendary sunset strip + pool parties. Pick your vibe.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">★ Island intro ◗ golden hour</div>
+      <h4>Sunset at Café del Mar</h4>
+      <p>Ease in with the famous <b>San Antonio sunset</b> (Café del Mar / Café Mambo), then test the waters at one club. <b>Pre-book tickets / guest list</b> — door prices on the island are brutal otherwise.</p>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day c-ibz">
+    <div class="day-head">
+      <div class="daynum">26</div>
+      <div class="dh-r">
+        <div class="day-date">Friday · Ibiza</div>
+        <div class="day-city">Full island day</div>
+        <div class="day-tag">Pool party → sunset → superclub.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">Day</div>
+        <div class="bd">
+          <span class="chip ch-must">★ The Ibiza thing</span>
+          <h4>Pool / boat party</h4>
+          <p><b>O Beach</b> or <b>Ibiza Rocks</b> for the daytime party, or a boat day around the coast. This is peak-Ibiza energy.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">Evening</div>
+        <div class="bd">
+          <h4>Sunset strip, round two</h4>
+          <p>Back to San Antonio for the sky show before the night kicks off.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">Superclub night ◗ the big one</div>
+      <h4>Pick your temple</h4>
+      <p><b>Ushuaïa</b> (open-air), <b>Hï Ibiza</b>, <b>Pacha</b>, <b>Amnesia</b> or <b>DC10</b> — check the 2026 line-ups and chase the DJ you want. Tables/GL for a big group pay off.</p>
+      <p class="note" style="color:#bcb0e0;font-style:italic;margin-top:8px">⚽ Fun footnote: Spain's 3rd match (vs Uruguay) kicks off ~2 AM Spain time tonight — you'll likely be mid-club when it's on the screens.</p>
+    </div>
+  </div>
+
+  <!-- ===== BARCELONA ===== -->
+  <div class="seg-label">Barcelona · the finale</div>
+
+  <!-- DAY 7 -->
+  <div class="day c-bcn">
+    <div class="day-head">
+      <div class="daynum">27</div>
+      <div class="dh-r">
+        <div class="day-date">Saturday · Ibiza → Barcelona</div>
+        <div class="day-city">Land + Saturday night out</div>
+        <div class="day-tag">You specifically wanted BCN nightlife on a Saturday. Here it is.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">Midday</div>
+        <div class="bd">
+          <span class="chip ch-move">Travel</span>
+          <h4>Ibiza → Barcelona</h4>
+          <p>Flight ~55 min, very frequent. Take a <b>morning/midday</b> one so you land with the afternoon to spare and the night intact. Base in <b>El Born / Gothic</b> (nightlife + walkable) or near <b>Barceloneta</b> beach.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">Evening</div>
+        <div class="bd">
+          <span class="chip ch-eat">Fuel up</span>
+          <h4>Tapas + vermut in El Born</h4>
+          <p>Settle in, eat well, then prep for the main event.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">★ Saturday night ◗ the headline</div>
+      <h4>Barcelona, full volume</h4>
+      <p>Beachfront mega-clubs at Port Olímpic — <b>Opium, Pacha Barcelona, Shôko</b> — or the legendary multi-room <b>Razzmatazz</b>. Saturday is the night the city peaks. <b>Book a table / guest list ahead</b> for the group.</p>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day c-bcn">
+    <div class="day-head">
+      <div class="daynum">28</div>
+      <div class="dh-r">
+        <div class="day-date">Sunday · Barcelona</div>
+        <div class="day-city">Recover + Gaudí icons</div>
+        <div class="day-tag">Tourist day. Also a chance to nurse last night.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">Late AM</div>
+        <div class="bd">
+          <span class="chip ch-must">★ Must-do</span>
+          <h4>Sagrada Família + Park Güell</h4>
+          <p>Gaudí's masterpieces. <b>Both need timed tickets booked in advance</b> — do it now, Sundays sell out. Add the <b>Gothic Quarter</b> and a stroll down La Rambla.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">Afternoon</div>
+        <div class="bd">
+          <h4>Barceloneta beach</h4>
+          <p>Sun, swim, chiringuito drinks. Recovery mode with a sea view.</p>
+        </div>
+      </div>
+    </div>
+    <div class="nightband">
+      <div class="nb-k">Chill night ◗ skydiving tomorrow</div>
+      <h4>Keep it mellow</h4>
+      <p>Dinner + a few drinks, early-ish night. You want clear heads (and stomachs) before jumping out of a plane.</p>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day c-bcn">
+    <div class="day-head">
+      <div class="daynum">29</div>
+      <div class="dh-r">
+        <div class="day-date">Monday · Costa Brava</div>
+        <div class="day-city">Skydive day</div>
+        <div class="day-tag">Block the whole day — travel + weather buffer.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">Full day</div>
+        <div class="bd">
+          <span class="chip ch-must">★ Bucket-list</span>
+          <h4>Skydive Costa Brava, Empuriabrava</h4>
+          <p>Sector Aeroclub s/n, 17487 Empuriabrava (Girona) — one of the world's top dropzones, coastal views the whole way down. It's ~1.5–2h north of Barcelona, so do it as a <b>full-day trip</b>: organized transfer or train + taxi, plus a buffer for weather holds.</p>
+          <p class="note">Weather plan: if Monday's a wash, swap with Sunday 28 — keep both days loosely flexible. Book the jump slot in advance either way.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">Evening</div>
+        <div class="bd">
+          <span class="chip ch-eat">Farewell</span>
+          <h4>Last proper dinner</h4>
+          <p>Back in BCN — toast the trip. Adrenaline + good food, light on the rest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day c-bcn">
+    <div class="day-head">
+      <div class="daynum">30</div>
+      <div class="dh-r">
+        <div class="day-date">Tuesday · Departure</div>
+        <div class="day-city">Last hours + fly home</div>
+        <div class="day-tag">Flight out 22:30 — you have the whole day.</div>
+      </div>
+    </div>
+    <div class="blocks">
+      <div class="block">
+        <div class="time">AM</div>
+        <div class="bd">
+          <h4>Brunch + last looks</h4>
+          <p>Lazy brunch, then either the <b>Bunkers del Carmel</b> viewpoint for the best skyline in the city, or <b>Passeig de Gràcia</b> for last-minute shopping. Check bags into a luggage store so you're hands-free.</p>
+        </div>
+      </div>
+      <div class="block">
+        <div class="time">7:30 PM</div>
+        <div class="bd">
+          <span class="chip ch-move">Wheels up</span>
+          <h4>Head to BCN airport</h4>
+          <p>Be airside by ~7:30–8 PM for the <b>10:30 PM</b> long-haul home. Adéu, España.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKLIST -->
+  <div class="checklist">
+    <h3>Book before you fly</h3>
+    <p class="cl-sub">The stuff that sells out or gets expensive at the door.</p>
+    <div class="cl-item done"><div class="cl-box"></div><div><b>Madrid stay</b> <span>— TOC Hostel, Plaza de Celenque (booked)</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Bernabéu tour</b> <span>— pick a 22 Jun slot online</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Madrid → València train</b> <span>— Renfe/iryo/Ouigo, late-AM 23 Jun, book early for €9–10</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>València → Ibiza</b> <span>— direct flight or Baleària fast ferry, 25 Jun</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Ibiza → Barcelona flight</b> <span>— morning/midday, 27 Jun</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Ibiza club tickets / guest list</b> <span>— check 2026 line-ups, group table</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Barcelona Saturday club</b> <span>— Opium/Pacha/Razzmatazz, group GL for 27 Jun</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Skydive Costa Brava</b> <span>— book 29 Jun slot + transfer</span></div></div>
+    <div class="cl-item"><div class="cl-box"></div><div><b>Sagrada Família + Park Güell</b> <span>— timed tickets, 28 Jun</span></div></div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="tips">
+    <div class="tip"><b>Money on the island:</b> Ibiza is the budget-killer — drinks, taxis and club doors are eye-watering. Pre-book entries, split big taxis, and pre-game before you go out.</div>
+    <div class="tip"><b>Spanish hours:</b> dinner is 9–10 PM, clubs don't fill till 1–2 AM and run till sunrise. Daytime plans should assume late, slow starts.</div>
+    <div class="tip"><b>Keep one bag light:</b> you're hopping cities every 2 days. Hand luggage where possible makes the València/Ibiza/BCN flight legs painless.</div>
+    <div class="tip"><b>San Juan logistics:</b> beach roads near Malvarrosa close ~4–5 PM on 23 Jun. Use tram/metro and arrive early evening to claim bonfire space.</div>
+  </div>
+
+  <footer>Buen viaje · 21–30 June 2026</footer>
+
+</div>
+</body>
+</html>
